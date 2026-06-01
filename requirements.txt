@@ -12,3 +12,4 @@ razorpay
 Pillow
 django-htmx
 requests
+PyJWT
