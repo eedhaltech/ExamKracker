@@ -1,6 +1,6 @@
 from pathlib import Path
 from decouple import config, Csv
-
+import dj_database_url
 BASE_DIR = Path(__file__).resolve().parent.parent
 
 SECRET_KEY = config('SECRET_KEY', default='django-insecure-change-me-in-production-use-env-var')
@@ -195,3 +195,9 @@ if not DEBUG:
     SECURE_HSTS_PRELOAD = True
     SESSION_COOKIE_SECURE = True
     CSRF_COOKIE_SECURE = True
+DATABASES = {
+    "default": dj_database_url.config(
+        conn_max_age=600,
+        ssl_require=True
+    )
+}
