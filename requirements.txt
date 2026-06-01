@@ -29,3 +29,12 @@ django_redis
 jwt
 dj-database-url
 import dj_database_url
+Django==4.2.13
+psycopg2-binary
+redis
+celery
+django-allauth
+whitenoise
+gunicorn
+django-redis
+python-decouple
