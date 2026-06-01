@@ -1,4 +1,4 @@
-django>=4.2,<5.0
+
 gunicorn
 psycopg2-binary
 dj-database-url
@@ -28,7 +28,6 @@ cryptography==48.0.0
 django_redis
 jwt
 dj-database-url
-Django==4.2.13
 psycopg2-binary
 redis
 celery
