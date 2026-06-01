@@ -173,6 +173,23 @@ import dj_database_url
 DATABASES = {
     'default': dj_database_url.config(conn_max_age=600)
 }
+import os
+
+# Use Render's Redis URL, fallback to local localhost only if coding offline
+REDIS_URL = os.environ.get('REDIS_URL', 'redis://127.0.0.1:6379')
+
+CACHES = {
+    'default': {
+        'BACKEND': 'django_redis.cache.RedisCache',
+        'LOCATION': f"{REDIS_URL}/1",
+        'OPTIONS': {
+            'CLIENT_CLASS': 'django_redis.client.DefaultClient',
+        }
+    }
+}
+
+CELERY_BROKER_URL = f"{REDIS_URL}/0"
+CELERY_RESULT_BACKEND = f"{REDIS_URL}/0"  
 # Security (production)
 if not DEBUG:
     SECURE_SSL_REDIRECT = True
