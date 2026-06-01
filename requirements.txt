@@ -2,3 +2,6 @@ flask
 gunicorn
 dj-database-url
 psycopg2-binary
+celery
+redis
+django-celery-beat
