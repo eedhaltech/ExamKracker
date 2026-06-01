@@ -169,7 +169,10 @@ CELERY_BEAT_SCHEDULE = {
         'schedule': 86400,  # every 24 hours
     },
 }
-
+import dj_database_url
+DATABASES = {
+    'default': dj_database_url.config(conn_max_age=600)
+}
 # Security (production)
 if not DEBUG:
     SECURE_SSL_REDIRECT = True
