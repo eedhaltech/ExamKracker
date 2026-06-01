@@ -1,8 +1,14 @@
-flask
+django>=4.2,<5.0
 gunicorn
-dj-database-url
 psycopg2-binary
+dj-database-url
+python-decouple
+whitenoise
+django-allauth
 celery
 redis
 django-celery-beat
-python-decouple
+razorpay
+Pillow
+django-htmx
+requests
